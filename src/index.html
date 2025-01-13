@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPR</title>
+</head>
+<body>
+    <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <div id="result">
+        <h3>Recognition Result</h3>
+        <p id="plate"></p>
+        <img id="cropImage" alt="Cropped Image" style="max-width: 100%; height: auto;">
+    </div>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+        const plateDisplay = document.getElementById('plate');
+        const cropImage = document.getElementById('cropImage');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const response = await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!response.ok) {
+                alert('Error uploading file.');
+                return;
+            }
+
+            const data = await response.json();
+            plateDisplay.textContent = `Plate: ${data.plate}`;
+            cropImage.src = data.crop; // Hiển thị ảnh mã hóa Base64
+        });
+    </script>
+</body>
+</html>
