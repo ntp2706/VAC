@@ -79,7 +79,7 @@ app.post('/upload', upload.single('image'), (req, res) => {
                 crop: `data:image/jpeg;base64,${imageData.toString('base64')}`
             };
 
-            const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbxgJ9xWvw_gw_Xs2rKvuJX3RW38xHmxSuuwgLCXQcvBv7gC2p62JX4pUvoA8m7qohsx/exec'; // Thay bằng URL Apps Script của bạn
+            const appsScriptUrl = 'https://script.google.com/macros/s//exec';
             const payload = {
                 sheet: 'Log',
                 content1: '*',
