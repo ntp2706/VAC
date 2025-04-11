@@ -13,7 +13,7 @@ A project on access management combining camera, RFID, and license plate recogni
 ## Features
  
 - **User Management**: Add and remove users with information including text and images
-- **Access Control**: Determine access rights based on license plate recognition
+- **Access Control**: Determine access permissions based on license plate recognition
 - **Server**: Process license plate recognition
 - **Real-time Monitoring**: Monitor access information in real-time
 - **Reporting**: Record access history in real-time
