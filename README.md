@@ -7,6 +7,7 @@
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
  
 A project on access management combining camera, RFID, and license plate recognition.
+
 *Progress assessment: 90/100*
 
 ## Features
